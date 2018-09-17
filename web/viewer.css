@@ -456,7 +456,14 @@ select {
 
 .pdfPresentationMode.pdfPresentationModeControls > *,
 .pdfPresentationMode.pdfPresentationModeControls .textLayer > div {
-  cursor: default;
+  /* ITHEPHY modification tests: */
+  /*  cursor: default;  original */
+  /* cursor: url('./images/cercle-rouge.png'), auto !important;  always on*/
+  /* cursor: url('./images/cercle-rouge.png'); circle outside text, nothing on text */
+  /* cursor: url('./images/cercle-rouge.png'), auto; disappears after delay on text */
+  /* cursor: url('./images/cercle-rouge.png'), auto important; circle outside text, nothing on text */
+  /* this is closest to what we want: same modified cursor on text and outside, disappears after timeout */
+  cursor: url('./images/cercle-rouge.png'), auto;
 }
 
 #outerContainer {
